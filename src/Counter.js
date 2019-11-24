@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { increment } from './redux/actions'
+import { increment, asyncIncrement } from './redux/actions'
 
 import styles from './styles.js'
 
-function Counter({ state, increment }) {
+function Counter({ state, increment, asyncIncrement }) {
   const { div, button, p } = styles
 
   return (
@@ -14,6 +14,9 @@ function Counter({ state, increment }) {
         +
       </button>
       <p style={p}>{state}</p>
+      <button onClick={asyncIncrement} style={button}>
+        +A
+      </button>
     </div>
   )
 }
@@ -24,6 +27,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   increment,
+  asyncIncrement,
 }
 
 export default connect(
