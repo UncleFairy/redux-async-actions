@@ -1,13 +1,8 @@
-import api from '../api'
-
 export const increment = () => ({
   type: 'INCREMENT',
 })
 
-//setTimeout(() => ({ type: 'ASYNC_INCREMENT', payload: { number: 5 } }), 1000)
-//({type: 'ASYNC_INCREMENT', payload:{number: api.number.getNumber()}})
-
-export const asyncIncrement = () => ({
+export const asyncIncrement = number => ({
   type: 'ASYNC_INCREMENT',
-  payload: { number: api.number.getNumber() },
+  payload: { number },
 })
