@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { increment, asyncIncrement } from './redux/actions'
+import { increment, getNumber } from './redux/actions'
 
 import styles from './styles.js'
 
@@ -14,7 +14,7 @@ function Counter({ state, dispatch }) {
         +
       </button>
       <p style={p}>{state}</p>
-      <button onClick={() => dispatch(asyncIncrement())} style={button}>
+      <button onClick={() => dispatch(getNumber())} style={button}>
         +A
       </button>
     </div>

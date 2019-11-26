@@ -1,15 +1,12 @@
-import api from '../api'
-
 export const increment = () => ({
   type: 'INCREMENT',
 })
 
-export const setAsyncNumber = number => ({
-  type: 'ASYNC_INCREMENT',
-  payload: { number },
+export const getNumber = () => ({
+  type: 'GET_NUMBER',
 })
 
-export const asyncIncrement = () => dispatch =>
-  api.number
-    .getNumber()
-    .then(({ data }) => dispatch(setAsyncNumber(data.number)))
+export const asyncIncrement = number => ({
+  type: 'ASYNC_INCREMENT',
+  payload: number,
+})
