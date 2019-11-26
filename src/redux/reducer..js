@@ -4,6 +4,8 @@ function counter(state = 0, { type, payload }) {
       return state + 1
     case 'ASYNC_INCREMENT':
       return state + payload.number
+    case 'GET_ONE':
+      return state
     default:
       return state
   }
